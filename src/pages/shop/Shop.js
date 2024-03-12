@@ -10,8 +10,8 @@ const Shop = (props) => {
                         <div className="row mb-3 align-items-center">
                             <div className="shopping-content">
 
-                                <span>Shop</span>
-                                <h2 className="shop-title">NoW</h2>
+                                <span>Explore Our </span>
+                                <h2 className="shop-title">store today</h2>
                             </div>
                         </div>
                     </div>

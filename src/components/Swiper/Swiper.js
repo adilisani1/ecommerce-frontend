@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { FadeTransform } from 'react-animation-components'
 import Swiper from 'swiper';
 import 'swiper/css';
 import './Swiper.css';
+
 
 function MySwiperComponent(props) {
 
@@ -71,157 +73,177 @@ function MySwiperComponent(props) {
 
     return (
         <div>
-            <div className="swiper home-swiper " >
-                <div className="swiper-wrapper">
-                    {props.products.map((item) => {
-                        if (item.trending) {
-                            return (
-                                <div className="swiper-slide" key={item.id}>
-                                    <div className="container swiper-container">
-                                        <div className="row gy-2">
-                                            <div className="col-lg-6 d-flex flex-column justify-content-center  order-md-2 order-2 order-lg-1 ">
-                                                <div className="hero-text-section">
-                                                    <h1 className="hero-title">NEW</h1>
-                                                    <span className="hero-title-2">COLLECTION</span>
-                                                    <p className="hero-text">Lorem Ipsum is simply dummy text of the printing and
-                                                        typesetting industry.</p>
-                                                </div>
-                                                <div className="cart-button-items">
-                                                    <div>
-                                                        <p className="real-price">${item.oldPrice.toFixed(2)}</p>
-                                                        <span className="cut-off-price">${item.price.toFixed(2)}</span>
+            <FadeTransform in
+                transformProps={{
+                    exitTransform: "scale(0.5) translateY(-50%)",
+                }}>
+                <div className="swiper home-swiper " >
+                    <div className="swiper-wrapper">
+                        {props.products.map((item) => {
+                            if (item.trending) {
+                                return (
+
+
+
+                                    <div className="swiper-slide" key={item.id}>
+                                        <div className="container swiper-container">
+                                            <div className="row gy-2">
+                                                <div className="col-lg-6 d-flex flex-column justify-content-center  order-md-2 order-2 order-lg-1 ">
+                                                    <div className="hero-text-section">
+                                                        <h1 className="hero-title">NEW</h1>
+                                                        <span className="hero-title-2">COLLECTION</span>
+                                                        <p className="hero-text">Lorem Ipsum is simply dummy text of the printing and
+                                                            typesetting industry.</p>
                                                     </div>
-                                                    <div className="button-class">
-                                                        <ion-icon name="bag-outline" class="cart-bag"></ion-icon>
-                                                        <button className="hero-button" onClick={() => props.featuredProduct(item)}>
-                                                            <span> Add to
-                                                                Cart</span>
-                                                        </button>
+                                                    <div className="cart-button-items">
+                                                        <div>
+                                                            <p className="real-price">${item.oldPrice.toFixed(2)}</p>
+                                                            <span className="cut-off-price">${item.price.toFixed(2)}</span>
+                                                        </div>
+                                                        <div className="button-class">
+                                                            {/* <ion-icon name="bag-outline" class="cart-bag"></ion-icon> */}
+                                                            <i className="cart-bag ri-shopping-bag-fill"></i>
+                                                            <button className="hero-button" onClick={() => props.featuredProduct(item)}>
+                                                                <span> Add to
+                                                                    Cart</span>
+                                                            </button>
+                                                        </div>
                                                     </div>
+
+
+
                                                 </div>
-
-
-
-                                            </div>
-                                            <div className="col-lg-5 offset-lg-1 order-1 order-lg-2 order-md-1 shoe-img">
-                                                <img className="img-fluid" src={item.image} alt="" />
+                                                <div className="col-lg-5 offset-lg-1 order-1 order-lg-2 order-md-1 shoe-img">
+                                                    <img className="img-fluid" src={item.image} alt="" />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            )
-                        }
-                    })}
 
-                    <div className="hero-slider-pagination">
-                        <span className="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1">
-                        </span>
+
+                                )
+                            }
+                        })}
+
+                        <div className="hero-slider-pagination">
+                            <span className="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1">
+                            </span>
+                        </div>
                     </div>
+
                 </div>
-            </div>
-
+            </FadeTransform>
             {/* <!---BOTTOM SLIDER --> */}
-            <section className="bottom-slider">
-                <div className="container">
-                    <div className="swiper bottom-swiper">
-                        <div className="swiper-wrapper">
-                            <div className="swiper-slide">
-                                <div className="cards-bottom">
-                                    <div className="bottom-products-item">
-                                        <img src="images/hero-section/addidas-shoes.png " className="bottom-products-img me-5"
-                                            alt="" />
-                                    </div>
-                                    <div className="bottom-products-content">
-                                        <h5 className="bottom-card-title ">Nike Air Premium</h5>
-                                        <div className="bottom-card-rating">
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="far fa-star"></i>
-                                        </div>
-                                        <div className="bottom-card-footer">
-                                            <p className="bottom-card-text mb-0 ">$199</p>
-                                            <ion-icon name="bag-outline" class='bottom-bag'></ion-icon>
-                                        </div>
-                                    </div>
+            <FadeTransform in
+                transformProps={{
+                    enterTransform: "scale(1) translateY(-50%)",
+                }}>
+                <section className="bottom-slider">
 
+                    <div className="container">
+                        <div className="swiper bottom-swiper">
+                            <div className="swiper-wrapper">
+                                <div className="swiper-slide">
+                                    <div className="cards-bottom">
+                                        <div className="bottom-products-item">
+                                            <img src="images/hero-section/addidas-shoes.png " className="bottom-products-img me-5"
+                                                alt="" />
+                                        </div>
+                                        <div className="bottom-products-content">
+                                            <h5 className="bottom-card-title ">Nike Air Premium</h5>
+                                            <div className="bottom-card-rating">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="far fa-star"></i>
+                                            </div>
+                                            <div className="bottom-card-footer">
+                                                <p className="bottom-card-text mb-0 ">$199</p>
+                                                <ion-icon name="bag-outline" class='bottom-bag'></ion-icon>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="cards-bottom">
-                                    <div className="bottom-products-item">
-                                        <img src="images/hero-section/nike-adapt-bb-smart.png " className="bottom-products-img me-5"
-                                            alt="" />
-                                    </div>
-                                    <div className="bottom-products-content">
-                                        <h5 className="bottom-card-title ">Nike Air Premium</h5>
-                                        <div className="bottom-card-rating">
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="far fa-star"></i>
+                                <div className="swiper-slide">
+                                    <div className="cards-bottom">
+                                        <div className="bottom-products-item">
+                                            <img src="images/hero-section/nike-adapt-bb-smart.png " className="bottom-products-img me-5"
+                                                alt="" />
                                         </div>
-                                        <div className="bottom-card-footer">
-                                            <p className="bottom-card-text mb-0 ">$199</p>
-                                            <ion-icon name="bag-outline" class='bottom-bag'></ion-icon>
+                                        <div className="bottom-products-content">
+                                            <h5 className="bottom-card-title ">Nike Air Premium</h5>
+                                            <div className="bottom-card-rating">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="far fa-star"></i>
+                                            </div>
+                                            <div className="bottom-card-footer">
+                                                <p className="bottom-card-text mb-0 ">$199</p>
+                                                <ion-icon name="bag-outline" class='bottom-bag'></ion-icon>
+                                            </div>
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="cards-bottom">
-                                    <div className="bottom-products-item">
-                                        <img src="/images/hero-section/high.png" className="bottom-products-img me-5" alt="" />
-                                    </div>
-                                    <div className="bottom-products-content">
-                                        <h5 className="bottom-card-title ">Nike Air Premium</h5>
-                                        <div className="bottom-card-rating">
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="far fa-star"></i>
+                                <div className="swiper-slide">
+                                    <div className="cards-bottom">
+                                        <div className="bottom-products-item">
+                                            <img src="/images/hero-section/high.png" className="bottom-products-img me-5" alt="" />
                                         </div>
-                                        <div className="bottom-card-footer">
-                                            <p className="bottom-card-text mb-0 ">$199</p>
-                                            <ion-icon name="bag-outline" class='bottom-bag'></ion-icon>
+                                        <div className="bottom-products-content">
+                                            <h5 className="bottom-card-title ">Nike Air Premium</h5>
+                                            <div className="bottom-card-rating">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="far fa-star"></i>
+                                            </div>
+                                            <div className="bottom-card-footer">
+                                                <p className="bottom-card-text mb-0 ">$199</p>
+                                                <ion-icon name="bag-outline" class='bottom-bag'></ion-icon>
 
+                                            </div>
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="cards-bottom">
-                                    <div className="bottom-products-item">
-                                        <img src="/images/hero-section/product12.png" className="bottom-products-img me-5" alt="" />
-                                    </div>
-                                    <div className="bottom-products-content">
-                                        <h5 className="bottom-card-title ">Nike Air Premium</h5>
-                                        <div className="bottom-card-rating">
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="far fa-star"></i>
+                                <div className="swiper-slide">
+                                    <div className="cards-bottom">
+                                        <div className="bottom-products-item">
+                                            <img src="/images/hero-section/product12.png" className="bottom-products-img me-5" alt="" />
                                         </div>
-                                        <div className="bottom-card-footer">
-                                            <p className="bottom-card-text mb-0 ">$199</p>
-                                            <ion-icon name="bag-outline" class='bottom-bag'></ion-icon>
+                                        <div className="bottom-products-content">
+                                            <h5 className="bottom-card-title ">Nike Air Premium</h5>
+                                            <div className="bottom-card-rating">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="far fa-star"></i>
+                                            </div>
+                                            <div className="bottom-card-footer">
+                                                <p className="bottom-card-text mb-0 ">$199</p>
+                                                <ion-icon name="bag-outline" class='bottom-bag'></ion-icon>
 
+                                            </div>
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                </div>
-            </section>
-        </div>
+
+                </section>
+            </FadeTransform>
+        </div >
+
     );
 }
 

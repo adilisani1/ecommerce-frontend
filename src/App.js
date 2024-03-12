@@ -7,7 +7,12 @@ import Home from "./pages/home/Home";
 import Shop from './pages/shop/Shop';
 import Cart from './pages/cart/Cart';
 import { Products } from './shared/products';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './index.css';
+import { ThemeProvider } from "./context/ThemeProvider";
 function App() {
 
   const getLocalStorage = () => {
@@ -25,6 +30,12 @@ function App() {
   const [showPopup, setShowPopup] = useState(false);
   const [addedItem, setAddedItem] = useState(null);
 
+  const notify = () => toast("Item added to your cart", {
+    // position: "top-center",
+    autoClose: 2000,
+  });
+
+
   const removeItemFromCart = (itemId) => {
     const updatedCartItems = cartItems.filter(item => item.id !== itemId);
     setCartItems(updatedCartItems);
@@ -41,45 +52,68 @@ function App() {
       }
       const newItem = { ...item, quantity: 1 };
       setAddedItem(newItem);
-      setShowPopup(true);
-      setTimeout(() => {
-        setShowPopup(false);
-      }, 2000);
+      notify()
       return [...prevCartItems, newItem];
 
     });
+
   };
   useEffect(() => {
     localStorage.setItem('cartData', JSON.stringify(cartItems))
   }, [cartItems])
 
+  const handleDecrement = (item) => {
+    
+    setCartItems((prevCartItems) => {
+      const existingItem = prevCartItems.find((cartItem) => cartItem.id === item.id);
+
+      if (existingItem) {
+        return prevCartItems.map((cartItem) =>
+          cartItem.id === item.id
+            ?
+            { ...cartItem, quantity: cartItem.quantity > 1 ? cartItem.quantity - 1 : 1 }
+            : cartItem)
+      }
+      return prevCartItems;
+    })
+  }
+
+  const handleIncrement = (item) => {
+    setCartItems((prevCartItems) => {
+      const existingItem = prevCartItems.find((cartItem) => cartItem.id === item.id);
+
+      if (existingItem) {
+        return prevCartItems.map((cartItem) => cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem)
+      }
+      return prevCartItems;
+    })
+
+  }
+
   return (
     <>
-      <Router>
-        <Navbar cartItems={cartItems} />
-        <div>
-          <Routes >
-            <Route exact path="/" element={<Home products={products} onHandleClick={onAddToCart} />} />
-            <Route exact path="/shop" element={<Shop products={products} onHandleClick={onAddToCart} />} />
-            <Route exact path="/cart"
-              element={
-                <Cart
-                  cartItems={cartItems}
-                  onRemove={removeItemFromCart}
-                  setCartItems={setCartItems} />
-              } />
-          </Routes>
-        </div>
-        <Footer />
-
-      </Router>
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <p>Item added to your cart.</p>
+      <ThemeProvider>
+        <Router>
+          <Navbar cartItems={cartItems} />
+          <div className="main-content">
+            <Routes >
+              <Route exact path="/" element={<Home products={products} onHandleClick={onAddToCart} />} />
+              <Route exact path="/shop" element={<Shop products={products} onHandleClick={onAddToCart} />} />
+              <Route exact path="/cart"
+                element={
+                  <Cart
+                    cartItems={cartItems}
+                    onRemove={removeItemFromCart}
+                    setCartItems={setCartItems}
+                    handleDecrement={handleDecrement}
+                    handleIncrement={handleIncrement} />
+                } />
+            </Routes>
           </div>
-        </div>
-      )}
+          <Footer />
+        </Router>
+      </ThemeProvider>
+      <ToastContainer />
     </>
   );
 }

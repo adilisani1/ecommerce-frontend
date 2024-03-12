@@ -1,6 +1,6 @@
 .home-swiper {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     position: relative;
 }
 
@@ -10,8 +10,8 @@
 }
 
 .home-swiper .swiper-container {
-    padding: 2rem 4rem 8rem 10rem;
-   
+    padding: 0rem 4rem 12rem 10rem;
+
 }
 
 .home-swiper .swiper-slide {
@@ -103,7 +103,7 @@
 .cart-button-items {
     display: flex;
     align-items: center;
-   
+
 
 }
 
@@ -133,20 +133,24 @@
     display: inline-flex;
     align-items: center;
     position: relative;
-    
+
 }
- .cart-bag{
+
+.cart-bag {
     margin-right: 1rem;
     background-color: var(--cards);
     color: white;
     font-size: 1.5rem;
     background-image: linear-gradient(to bottom, #41f7fd, #334eff);
-    padding: 1rem;
+    /* padding: 1rem; */
     border-radius: 50px;
     position: absolute;
     left: 15%;
-    
-    
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-button {
@@ -278,10 +282,7 @@
     margin-bottom: .5rem;
 }
 
-t-bag .bottom-products-content .bottom-card-rating {
-   
-
-}
+t-bag .bottom-products-content .bottom-card-rating {}
 
 .bottom-card-rating .fa-star {
     color: rgb(248, 202, 77);
@@ -305,24 +306,44 @@ t-bag .bottom-products-content .bottom-card-rating {
 
 .bottom-bag {
     color: var(--white);
+    cursor: pointer;
 }
 
+
+
 /*RESPONSIVE Swiper Section*/
-@media (max-width: 1024px) {
+@media (max-width: 1199px) {
     .hero-title {
         font-size: 4.5rem;
     }
+
     .hero-title-2 {
         font-size: 6rem;
     }
-    
+
     .hero-text {
         font-size: 1.5rem;
         width: 100%;
     }
+}
+
+
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+
+    .hero-title-2 {
+        font-size: 6rem;
+    }
+
+    .hero-text {
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
     .cart-bag {
         font-size: 1.4rem;
-        padding: .8rem;
 
     }
 
@@ -331,10 +352,11 @@ t-bag .bottom-products-content .bottom-card-rating {
 
 @media(max-width: 991px) {
 
-.home-swiper {
-        height: 100%;
+    .home-swiper {
+        height: auto;
     }
 
+    /* 
         .bottom-slider {
             position: relative;
             bottom: auto;
@@ -342,22 +364,25 @@ t-bag .bottom-products-content .bottom-card-rating {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 32px 0 rgb(0 0 0 / 40%);
-        }
+        } */
 
-                .home-swiper .swiper-container {
-                    padding: 15rem 0 8rem 0;
-                }
+    .home-swiper .swiper-container {
+        padding: 4rem 0 20rem 0;
+    }
 
     .hero-title {
         font-size: 4.5rem;
     }
+
     .hero-title-2 {
         font-size: 6rem;
     }
+
     .hero-text-section {
         text-align: center;
         width: 100%;
     }
+
     .hero-text {
         font-size: 1.5rem;
         width: 100%;
@@ -416,108 +441,113 @@ t-bag .bottom-products-content .bottom-card-rating {
         justify-content: center;
 
     }
-    
 
-        .big-card-text .long-text {
-           
-            font-size: 1.6rem;
-            
-           
-        }
+
+    .big-card-text .long-text {
+        font-size: 1.6rem;
+
+
+    }
 }
 
 
 @media (max-width: 767px) {
     .home-swiper .swiper-container {
-        padding: 15rem 0 8rem 0;
+        padding: 12rem 0 18rem 0;
     }
-        .home-swiper .swiper-container .shoe-img img {
-            max-width: 100%;
-            width: 70%;
-            margin: 1rem auto;
-            text-align: center;
-            display: flex;
-        }
+
+    .home-swiper .swiper-container .shoe-img img {
+        max-width: 100%;
+        width: 70%;
+        margin: 1rem auto;
+        text-align: center;
+        display: flex;
+    }
 
 
 
-                   .cart-button-items div {
-                       margin-right: 0;
-                       justify-content: center;
-                   }
-                   .hero-button{
-                    width: 160px;
-                    height:50px;
-                   }
-                   .button-class{
-                    margin-left: 3rem;
-                   }
-               
-           
+    .cart-button-items div {
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    .hero-button {
+        width: 160px;
+        height: 50px;
+    }
+
+    .button-class {
+        margin-left: 3rem;
+    }
+
+
 }
 
 @media (max-width: 667px) {
-        .home-swiper .swiper-container .shoe-img img {
-                    max-width: 100%;
-                    width: 70%;
-                    margin:  1rem auto;
-                    text-align: center;
-                    display: flex;
-                }
+    .home-swiper .swiper-container .shoe-img img {
+        max-width: 100%;
+        width: 70%;
+        margin: 1rem auto;
+        text-align: center;
+        display: flex;
+    }
 
 
-        .hero-text-section {
-            align-items: center;
-            display: block;
-            justify-content:center;
-            text-align: center;
-        }
+    .hero-text-section {
+        align-items: center;
+        display: block;
+        justify-content: center;
+        text-align: center;
+    }
 
     .hero-title {
-        font-size: 5.2rem;
+        font-size: 5rem;
     }
 
     .hero-title-2 {
-        font-size: 5.2rem;
+        font-size: 5rem;
     }
 
     .hero-text {
-        /* font-size: 1.7rem; */
+        font-size: 1.4rem;
         margin: 1.5rem auto;
+        width: 80%;
     }
 
-      .hero-button{
+    .hero-button {
         width: 160px;
-        height:50px;
-       }
-       .hero-button span{
+        height: 50px;
+    }
+
+    .hero-button span {
         font-size: 1.2rem;
-       }
+    }
 
-   .cart-button-items {
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       margin: 0 auto;
-       padding: 0;
+    .cart-button-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 0;
 
-   }
- 
+    }
 
-              
+
+
 }
+
 @media (max-width: 425px) {
-.home-swiper .swiper-container .shoe-img img {
+    .home-swiper .swiper-container .shoe-img img {
         width: 50%;
 
     }
 
-        .swiper-container .imac-img img {
+    .swiper-container .imac-img img {
         width: 50%;
 
     }
 
-        .swiper-container .watch-img img {
+    .swiper-container .watch-img img {
         width: 40%;
 
     }

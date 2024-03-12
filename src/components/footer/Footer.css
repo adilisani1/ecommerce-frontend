@@ -1,16 +1,19 @@
 /* Footer- */
 .footer-wrapper {
-    position: relative;
-background: linear-gradient(358deg, rgb(64 59 59), rgb(0 0 0 / 92%));
+    background: linear-gradient(358deg, rgb(64 59 59), rgb(0 0 0 / 92%));
     border: 2px solid rgba(255, 255, 255, 0.01);
-    padding: 5rem 0rem;
+
     z-index: 500;
-}
-
-.footer-container {
-    margin-bottom: 3rem;
 
 }
+
+.footer-main {
+    margin-left: 90px;
+    width: calc(100% - 90px);
+    padding: 5rem 0rem;
+}
+
+.footer-container {}
 
 .footer-wrapper .footer-heading {
     color: var(--white);
@@ -42,6 +45,7 @@ background: linear-gradient(358deg, rgb(64 59 59), rgb(0 0 0 / 92%));
 
 }
 
+/* 
 .footer-container .send-form .fa-paper-plane {
     background-color: var(--text-color);
     padding-top: 1rem;
@@ -50,6 +54,21 @@ background: linear-gradient(358deg, rgb(64 59 59), rgb(0 0 0 / 92%));
     padding-right: 1.8rem;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+} */
+.footer-container .send-form .fa-paper-plane {
+    background-color: var(--text-color);
+    /* padding-top: 1rem; */
+    /* padding-bottom: 1.1rem; */
+    /* padding-left: 1.2rem; */
+    /* padding-right: 1.8rem; */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 60px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .footer-container .send-form .fa-paper-plane:hover {
@@ -65,14 +84,11 @@ background: linear-gradient(358deg, rgb(64 59 59), rgb(0 0 0 / 92%));
 }
 
 .footer-bottom {
-    position: absolute;
     background: var(--main-bg);
-    width: 100%;
     padding: 2rem 5rem 1.5rem 5rem;
-    bottom: 0;
-    left: 0;
-    margin-top: 2rem;
-
+    /* margin-top: 2rem; */
+    margin-left: 90px;
+    width: calc(100% - 90px);
 }
 
 .footer-bottom .copyright-text {
@@ -91,14 +107,27 @@ background: linear-gradient(358deg, rgb(64 59 59), rgb(0 0 0 / 92%));
 
 /*RESPONSIVE Footer Section*/
 @media (max-width: 767px) {
+    .footer-wrapper {
+        /* padding: 5rem 2rem; */
+    }
 
+    .footer-main {
+        margin-left: 0px;
+
+    }
+
+    .footer-bottom {
+        margin-left: 0px;
+        width: 100%;
+    }
 }
 
 @media (max-width: 667px) {
-/*Footer */
-    .footer-container {
+
+    /*Footer */
+    /* .footer-container {
         margin-bottom: 6rem;
-    }
+    } */
 }
 
 @media (max-width: 425px) {}

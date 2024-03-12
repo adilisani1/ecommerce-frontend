@@ -240,6 +240,24 @@ background-color: #fc5800;
   color:#fc5800;
 }
 
+
+ .Toastify__toast {
+   color: #444C63;
+   font-size: 16px;
+   padding-left: 20px;
+   line-height: 20px;
+   font-weight: 400;
+   margin: 0 auto;
+
+ }
+
+ .Toastify__toast-container {
+   width: 100vw;
+   right: 0;
+   max-width: 100%;
+   width: 400px;
+ }
+
 @media (max-width: 991px) {
   
   .modal-area {
@@ -282,4 +300,26 @@ background-color: #fc5800;
     object-fit: cover;
     width: 100%;
   }
+
+        .Toastify__toast {
+          color: #444C63;
+          font-size: 16px;
+          padding-left: 20px;
+          line-height: 20px;
+          font-weight: 400;
+          margin: 0 auto;
+    
+        }
+    
+        .Toastify__toast-container {
+          width: 100vw;
+          /* padding: 0; */
+          left: 0;
+          /* margin: 0; */
+          margin-left: auto;
+          margin-right: auto;
+          right: 0;
+          max-width: 100%;
+          width: 300px;
+        }
 }

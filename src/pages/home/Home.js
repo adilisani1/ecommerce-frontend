@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+
 import './Home.css';
 import MySwiperComponent from '../../components/Swiper/Swiper';
 
@@ -18,12 +20,13 @@ const Home = (props) => {
 
 
             <div className="flash-sale-heading">
-                <h2>Flash Sale</h2>
+                <h2>Flash <span>Sale</span></h2>
             </div>
 
             {/* <!--MAIN SECTION--> */}
-            <section className="main-section">
-                <div className="container1">
+
+            <section className="main-section " data-aos="slide-up">
+                <div className="container1" >
                     {props.products.map((item) => {
                         if (item.flashSale) {
                             return (
@@ -64,8 +67,7 @@ const Home = (props) => {
                 </div>
             </section>
 
-
-            <div className="big-card-bg">
+            <div className="big-card-bg" data-aos="fade-right">
                 <div className="container">
                     <div className="big-card wa">
                         {props.products.map((item) => {
@@ -76,7 +78,7 @@ const Home = (props) => {
                                             <img src={item.image} className="" alt="..." />
                                         </div>
 
-                                        <div className="col-md-8 big-card-text">
+                                        <div className="col-md-8 big-card-text" >
                                             <div className="card-body">
                                                 <p className="entertainment-text ">Entertainment</p>
                                                 <h5 className="big-card-title ">{item.name}</h5>
@@ -86,7 +88,8 @@ const Home = (props) => {
                                                 </p>
                                                 <div className="big-card-button-area">
                                                     <div className="big-card-btn-wrapper">
-                                                        <ion-icon name="bag-outline" class="cart-bag"></ion-icon>
+                                                        <i class="cart-bag ri-shopping-bag-fill"></i>
+                                                        {/* <ion-icon name="bag-outline" class="cart-bag"></ion-icon> */}
                                                         <button className="big-card-btn" onClick={() => props.onHandleClick(item)}>
                                                             <span> Add to Cart</span>
                                                         </button>
@@ -103,12 +106,14 @@ const Home = (props) => {
 
             </div>
 
+
+
             <div className="flash-sale-heading">
-                <h2>Trending Products</h2>
+                <h2>Trending <span>Products</span></h2>
             </div>
 
 
-            <section className="main-section">
+            <section className="main-section" data-aos="slide-up">
                 <div className="container2">
 
                     {props.products.map((product) => {

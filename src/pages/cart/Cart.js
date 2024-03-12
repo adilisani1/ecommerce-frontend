@@ -5,6 +5,7 @@ import { MyModal } from '../../utils/Modal';
 import { Table } from '../../utils/Table';
 import { Modal, ModalBody } from 'reactstrap';
 
+
 const Cart = (props) => {
     const [isCheckout, setIsCheckout] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,8 @@ const Cart = (props) => {
     });
 
     const toggle = () => setIsCheckout(!isCheckout);
+
+
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -51,12 +54,17 @@ const Cart = (props) => {
 
     return (
         <>
+
+
             <section className="container">
                 <div className="cart-data">
+
                     <div className="cart-items-box">
                         <Table
                             cartItems={props.cartItems}
-                            onRemove={props.onRemove} />
+                            onRemove={props.onRemove}
+                            handleDecrement={props.handleDecrement}
+                            handleIncrement={props.handleIncrement} />
                     </div>
 
                     <div className="cart-payment-box">
@@ -82,6 +90,7 @@ const Cart = (props) => {
                             </button>
                         </div>
                     </div>
+
 
 
                 </div>
@@ -124,6 +133,7 @@ const Cart = (props) => {
                         </div>
                     )
                 )}
+
             </section>
         </>
     )

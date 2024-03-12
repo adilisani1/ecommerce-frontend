@@ -1,0 +1,48 @@
+.form-check {
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    justify-content: flex-end;
+
+}
+
+.form-check-input {
+    display: none;
+}
+
+.form-check-input:checked+.form-check-label::after {
+    transform: translateX(28px);
+}
+
+.form-check-label {
+    display: flex;
+    cursor: pointer;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6px;
+    border-radius: 50px;
+    width: 63px;
+    height: 35px;
+    transition: all 0.3s ease;
+    border: 1px solid #fff;
+}
+
+.form-check-label .ball {
+    height: 25px;
+    width: 25px;
+
+    background-color: #fff;
+    position: absolute;
+    border-radius: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-check-label .sun {
+    font-size: 18px;
+    color: #fff;
+}
+
+.form-check-label .moon {
+    font-size: 18px;
+    color: #fff;
+}

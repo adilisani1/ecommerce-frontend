@@ -74,15 +74,15 @@ export const Products = [
     oldPrice: 699,
     trending: true,
   },
-  {
-    id: 8,
-    name: "Smart Watch",
-    image: "/images/hero-section/clay-apple-watch.png",
-    category: "watches",
-    price: 599,
-    oldPrice: 699,
-    trending: true,
-  },
+  // {
+  //   id: 8,9
+  //   name: "Smart Watch",
+  //   image: "/images/hero-section/clay-apple-watch.png",
+  //   category: "watches",
+  //   price: 599,
+  //   oldPrice: 699,
+  //   trending: true,
+  // },
 
   {
     id: 9,

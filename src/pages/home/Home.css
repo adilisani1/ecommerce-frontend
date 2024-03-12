@@ -6,13 +6,13 @@
 .hero-section {
     width: 100%;
     background: radial-gradient(#39424d, #14171d);
-    position: relative; 
+    position: relative;
 }
 
 /*Main Section*/
 .main-section h2 {
     font-size: 4rem;
-    ;
+
 }
 
 .modal-dark-wrapper {
@@ -70,9 +70,14 @@
     color: white;
     font-size: 1.5rem;
     background-image: linear-gradient(to bottom, #41f7fd, #334eff);
-    padding: 1rem;
+    /* padding: 1rem; */
     border-radius: 50px;
     position: absolute;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     right: 0;
 }
@@ -92,7 +97,7 @@
 .main-section {
     display: flex;
     justify-content: center;
-    background: var(--main-bg);
+    /* background: var(--main-bg); */
     overflow: hidden;
     box-sizing: border-box;
     position: relative;
@@ -101,7 +106,8 @@
 
 .flash-sale-heading {
     width: 100%;
-    margin-top: 8rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
     text-align: center;
     color: #fff;
     text-transform: uppercase;
@@ -109,9 +115,16 @@
 
 .flash-sale-heading h2 {
     font-size: 4rem;
+    font-weight: 300;
+    font-family: var(--Poppins);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.flash-sale-heading span {
+    font-size: 4rem;
     font-weight: 700;
     font-family: var(--Poppins);
-    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
@@ -122,7 +135,8 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-margin: 5rem 0;
+    margin-top: 2rem;
+
 }
 
 .container1 .card {
@@ -283,6 +297,7 @@ margin: 5rem 0;
     background-image: linear-gradient(135deg, #41f7fd, #334eff);
     color: var(--white);
     font-family: var(--Poppins);
+    border: none;
 }
 
 .container1 .card .content .size span.active {
@@ -318,7 +333,7 @@ margin: 5rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
     /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
     /* background-color: #27282b; */
     /* backdrop-filter: blur(10px); */
@@ -387,7 +402,7 @@ margin: 5rem 0;
     display: inline-flex;
     align-items: center;
     position: relative;
-    
+
 }
 
 
@@ -411,143 +426,153 @@ margin: 5rem 0;
     letter-spacing: .6px;
 
 }
+
 .big-card-btn:hover {
     background-image: linear-gradient(135deg, #41f7fd, #334eff);
 }
 
 
-/*RESPONSIVE Main Section*/ 
+/*RESPONSIVE Main Section*/
 @media (max-width: 1024px) {
-    
-.led-tv-img img {
-    max-width: 100%;
-    width: 100%;
-    object-fit: contain;
-    height: 32rem;
-}
+
+    .led-tv-img img {
+        max-width: 100%;
+        width: 100%;
+        object-fit: contain;
+        height: 32rem;
+    }
 
 
-.big-card-text .big-card-title {
-    font-size: 3.8rem;
-   
+    .big-card-text .big-card-title {
+        font-size: 3.8rem;
 
-}
 
-.big-card-text .long-text {
-   
-    font-size: 1.6rem;
-  
-}
+    }
 
-.big-card-btn span {
-    font-size: 1.5rem;
-}
+    .big-card-text .long-text {
+
+        font-size: 1.6rem;
+
+    }
+
+    .big-card-btn span {
+        font-size: 1.5rem;
+    }
 
 
 }
 
 @media (max-width: 768px) {
-    
+
     .container1 .card .img8x h2 {
         font-size: 2.5rem;
-        
-    }
-                 
-                 .big-card {
-                     padding: 1rem 2.5rem;
-                 }
-    
-    
-                 .big-card-text .big-card-title {
-                     font-size: 3rem;
-    
-                 }
-    
-    
-                 .big-card-text .long-text {
-                     width: 100%;
-                     font-size: 1.3rem;
-    
-                 }
 
-  
-                        .main-section {
-                            z-index: 5;
-                            display: b;
-                            padding: 5px 10px;
-                           
-                        }
-                        .big-card-btn {
-                           
-                            width: 150px;
-                            height: 50px;
-                           
-                        }
-                        .big-card-btn span {
-                            font-size: 1.3rem;
-                        }
-                                                
+    }
+
+    .big-card {
+        padding: 1rem 2.5rem;
+    }
+
+
+    .big-card-text .big-card-title {
+        font-size: 3rem;
+
+    }
+
+
+    .big-card-text .long-text {
+        width: 100%;
+        font-size: 1.3rem;
+
+    }
+
+
+    .main-section {
+        z-index: 5;
+        display: b;
+        padding: 5px 10px;
+
+    }
+
+    .big-card-btn {
+
+        width: 150px;
+        height: 50px;
+
+    }
+
+    .big-card-btn span {
+        font-size: 1.3rem;
+    }
+
 }
 
 @media (max-width: 767px) {
+
     /* MAIN SECTION */
-            /*------------------------------------*/
-            .container1 .card .img8x h2 {
-                font-size: 2.5rem;
-                
-            }
-                         
-                         .big-card {
-                             height: auto;
-                             padding: 1rem 2.5rem;
-                             margin: 1rem 0.5rem;
-            
-                         }
-            
-                         .led-tv-img {
-                             margin-bottom: 3rem;
-                             padding-right: 0;
-                         }
-            
-                         .led-tv-img img {
-                             margin-top: -4rem;
-                             
-                         }
-            
-            
-                         .big-card-text .big-card-title {
-                             font-size: 3rem;
-            
-                         }
-            
-                         .big-card .big-card-text {
-                             text-align: center;
-                             padding: 0;
-                         }
-            
-            
-                         .big-card-text .long-text {
-                             width: 100%;
-                             font-size: 1.5rem;
-            
-                         }
+    /*------------------------------------*/
+    .container1 .card .img8x h2 {
+        font-size: 2.5rem;
 
-          
-                                .main-section {
-                                    z-index: 5;
-                                    padding: 5px 10px;
-                                   
-                                }
+    }
 
-                                                              
-                                                           
-                
+    .flash-sale-heading h2 {
+        font-size: 3rem;
+
+    }
+
+    .flash-sale-heading span {
+        font-size: 3rem;
+
+    }
+
+    .big-card {
+        height: auto;
+        padding: 1rem 2.5rem;
+        margin: 1rem 0.5rem;
+
+    }
+
+    .led-tv-img {
+        margin-bottom: 3rem;
+        padding-right: 0;
+    }
+
+    .led-tv-img img {
+        margin-top: -4rem;
+
+    }
+
+
+    .big-card-text .big-card-title {
+        font-size: 3rem;
+
+    }
+
+    .big-card .big-card-text {
+        text-align: center;
+        padding: 0;
+    }
+
+
+    .big-card-text .long-text {
+        width: 100%;
+        font-size: 1.5rem;
+
+    }
+
+
+    .main-section {
+        z-index: 5;
+        padding: 5px 10px;
+
+    }
+
+
+
+
 }
 
-@media (max-width: 667px) {
-                
-}
+@media (max-width: 667px) {}
 
-@media (max-width: 425px) {
-
-}
+@media (max-width: 425px) {}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import DarkMode from '../Darkmode/Darkmode';
 
 const Navbar = (props) => {
     const [showNav, setShowNav] = useState(false);
@@ -30,19 +31,6 @@ const Navbar = (props) => {
 
     return (
         <>
-            {/*  < !--SideBar--> */}
-            <section className="sidebar">
-                <div className="menu-area">
-                    <div className="side-menu-icon">
-                        <img className="menu-image" src="./images/logo/menu-icon.svg" alt="logo" onClick={toggleMenu} />
-                    </div>
-                    <ul className="social-icons">
-                        <li><span className="fab fa-facebook-f icon text-white"></span></li>
-                        <li><span className="fab fa-twitter icon text-white"></span></li>
-                        <li><span className="fab fa-instagram icon text-white"></span></li>
-                    </ul>
-                </div>
-            </section>
 
 
             {/* <!--Side Menu Modal-- > */}
@@ -67,9 +55,11 @@ const Navbar = (props) => {
                 </ul>
 
                 <div className="side-menu-social">
-                    <span className="fab fa-facebook-f"></span>
-                    <span className="fab fa-twitter "></span>
-                    <span className="fab fa-instagram  "></span>
+                    {/* <span className="fab fa-facebook-f"></span> */}
+                    <span className="ri-facebook-fill"></span>
+                    <span className="ri-twitter-fill"></span>
+                    <span className="ri-instagram-fill"></span>
+
                 </div>
 
             </div>
@@ -77,6 +67,7 @@ const Navbar = (props) => {
 
             {/* <!--Header--> */}
             <header className={`header-wrap ${isActiveHeader ? "active" : ""} ${showNav ? "show" : ""}`}>
+
                 <div className="header-inner ">
                     <div className="logo-area">
                         <Link className="navbar-brand text-muted" to="/">
@@ -84,13 +75,15 @@ const Navbar = (props) => {
                         </Link>
                     </div>
 
+                    {/* <DarkMode /> */}
                     <nav className="navigation-container " >
                         <ul className="nav-menu" >
                             <li class="mobile-search">
                                 <input type="text" className="form-control" placeholder="Search Product......." />
-                                <ion-icon class="search-mobile-icon text-white" name="search-outline">
-                                </ion-icon>
+                                <i className="search-mobile-icon text-white ri-search-line " ></i>
+
                             </li>
+
                             <li className="" onClick={toggleNavbar}>
                                 <Link className="" to="/">Home</Link>
                             </li>
@@ -106,32 +99,54 @@ const Navbar = (props) => {
 
                             <li className="position-relative">
                                 <Link className="" to="/cart" onClick={toggleNavbar}>
-                                    <ion-icon name="bag-outline"></ion-icon>
-                                    <span className="cart-count-badge">{props.cartItems.length}</span>
+                                    <i class="ri-shopping-bag-fill"></i>
+                                    {props.cartItems.length > 0 && (
+                                        <span className="cart-count-badge">{props.cartItems.length}</span>
+                                    )}
+                                    {/* <span className="cart-count-badge">{props.cartItems.length}</span> */}
                                 </Link>
                             </li>
 
                             <li className="">
-                                <a className="" href="#"><span className="far fa-heart"></span>
+                                <a className="" href="#">
+                                    <i class="ri-heart-line"></i>
                                 </a>
                             </li>
+
+                            <li>
+                                <a className='search'>
+                                    <i className="search-icon ri-search-line " data-bs-toggle="modal" data-bs-target="#search-box"></i>
+                                </a>
+                            </li>
+
                         </ul>
 
                     </nav>
 
                     <div className="mobile-nav-items " onClick={toggleNavbar}>
-                        <ion-icon name="menu-outline" class="menu-icon text-white"></ion-icon>
-                        <ion-icon name="close-outline" class="close-icon text-white"></ion-icon>
+
+                        <i className="menu-icon text-white ri-menu-line"></i>
+                        <i class="close-icon text-white ri-close-line"></i>
                     </div>
 
-                    <div className="side-search-area">
-                        <div className="search">
-                            <ion-icon class="search-icon" data-bs-toggle="modal" data-bs-target="#search-box"
-                                name="search-outline">
-                            </ion-icon>
-                        </div>
-                    </div>
                 </div>
+
+
+                {/*  < !--SideBar--> */}
+                <section className="sidebar">
+                    <div className="menu-area">
+                        <div className="side-menu-icon">
+                            <img className="menu-image" src="./images/logo/menu-icon.svg" alt="logo" onClick={toggleMenu} />
+                        </div>
+                        <ul className="social-icons">
+                            <li><span className="icon text-white ri-facebook-fill"></span></li>
+                            <li><span className="icon text-white ri-twitter-fill"></span></li>
+                            <li><span className="icon text-white ri-instagram-fill"></span></li>
+                        </ul>
+                    </div>
+                </section>
+
+
             </header>
 
             {/* <!--Search Modal-- > */}
@@ -145,9 +160,11 @@ const Navbar = (props) => {
                         </a>
                         <div className="modal-search">
                             <div className="modal-search-inner">
+
                                 <input className="search-input form-control" placeholder="Search Product......." type="text" />
-                                <ion-icon class="search-icon text-white" name="search-outline">
-                                </ion-icon>
+                                {/* <ion-icon class="search-icon text-white" name="search-outline"> */}
+                                <i className="search-icon text-white ri-search-line " data-bs-toggle="modal" data-bs-target="#search-box"></i>
+
                             </div>
                         </div>
                     </div>

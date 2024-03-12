@@ -1,4 +1,4 @@
-export const Table = ({ cartItems, onRemove }) => {
+export const Table = ({ cartItems, onRemove, handleDecrement, handleIncrement }) => {
     return (
         <div>
             <table className="table table-borderless table-shopping-cart">
@@ -28,9 +28,9 @@ export const Table = ({ cartItems, onRemove }) => {
                             </td>
 
                             <td className="align-baseline">
-                                <button className="quantity-btn">-</button>
+                                <button className="quantity-btn" onClick={() => handleDecrement(item)}>-</button>
                                 <span className="quantity-count">{item.quantity}</span>
-                                <button className="quantity-btn">+</button>
+                                <button className="quantity-btn" onClick={() => handleIncrement(item)}>+</button>
                             </td>
 
                             <td className="align-baseline">
