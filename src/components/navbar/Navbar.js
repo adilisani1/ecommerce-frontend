@@ -103,7 +103,6 @@ const Navbar = (props) => {
                                     {props.cartItems.length > 0 && (
                                         <span className="cart-count-badge">{props.cartItems.length}</span>
                                     )}
-                                    {/* <span className="cart-count-badge">{props.cartItems.length}</span> */}
                                 </Link>
                             </li>
 
