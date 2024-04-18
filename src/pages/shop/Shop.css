@@ -157,12 +157,15 @@
 }
 
 .product-price-section {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
     margin-top: 1rem;
     padding: 0 2.5rem 2rem 3.5rem;
+    position: relative;
 }
+
+
 
 .product-price-section .color-option {
     display: flex;
@@ -219,6 +222,38 @@
     justify-content: center;
 }
 
+.price .old-price {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.old-price span {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: line-through;
+}
+
+.price .regular-price {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    align-content: center;
+
+}
+
+.regular-price span {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+}
+
+.regular-price div {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
 .price .price_num {
     font-size: 1.5rem;
     text-decoration: line-through;
@@ -228,6 +263,8 @@
     font-style: italic;
     margin-bottom: 0;
     padding-bottom: 0;
+
+
 }
 
 .price .price_letter {

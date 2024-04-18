@@ -215,6 +215,8 @@
     visibility: hidden;
 }
 
+
+
 .container1 .card:hover .content {
     opacity: 1;
     visibility: visible;

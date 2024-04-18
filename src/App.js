@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import './index.css';
 import { ThemeProvider } from "./context/ThemeProvider";
+import About from "./pages/About/About";
 function App() {
 
   const getLocalStorage = () => {
@@ -63,7 +64,7 @@ function App() {
   }, [cartItems])
 
   const handleDecrement = (item) => {
-    
+
     setCartItems((prevCartItems) => {
       const existingItem = prevCartItems.find((cartItem) => cartItem.id === item.id);
 
@@ -98,7 +99,8 @@ function App() {
           <div className="main-content">
             <Routes >
               <Route exact path="/" element={<Home products={products} onHandleClick={onAddToCart} />} />
-              <Route exact path="/shop" element={<Shop products={products} onHandleClick={onAddToCart} />} />
+              <Route path="/shop" element={<Shop products={products} onHandleClick={onAddToCart} />} />
+              <Route path="/about" element={<About />} />
               <Route exact path="/cart"
                 element={
                   <Cart

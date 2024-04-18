@@ -134,17 +134,23 @@ const Home = (props) => {
                                     </div>
 
                                     <div className="product-price-section">
-                                        <div className="color-option">
-                                            <span className="color">Colour:</span>
+                                        {/* <div className="color-option">
+                                            <span className="color">Price</span>
                                             <div className="circles">
                                                 <span className="circle blue active" id="blue"></span>
                                                 <span className="circle pink " id="pink"></span>
                                                 <span className="circle yellow " id="yellow"></span>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className="price">
-                                            <span className="price_num">${product.oldPrice.toFixed(2)}</span>
-                                            <span className="price_letter">${product.price.toFixed(2)}</span>
+                                            <div className='old-price'>
+                                                <span>Old Price</span>
+                                                <span className="price_num">${product.oldPrice.toFixed(2)}</span>
+                                            </div>
+                                            <div className='regular-price'>
+                                                <span>Regular Price :</span>
+                                                <span className="price_letter">${product.price.toFixed(2)}</span>
+                                            </div>
                                         </div>
 
                                     </div>

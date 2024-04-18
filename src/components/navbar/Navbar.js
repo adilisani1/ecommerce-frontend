@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
-import DarkMode from '../Darkmode/Darkmode';
+import logo from '../../logo/ecommerce-web-logo.png'
 
 const Navbar = (props) => {
     const [showNav, setShowNav] = useState(false);
@@ -47,7 +47,7 @@ const Navbar = (props) => {
                         <Link className="" to="/shop">Shop</Link>
                     </li>
                     <li className="">
-                        <Link className="" to="/">Deals</Link>
+                        <Link className="" to="/about">About</Link>
                     </li>
                     <li className="">
                         <Link className="" to="/">Contact Us</Link>
@@ -71,7 +71,7 @@ const Navbar = (props) => {
                 <div className="header-inner ">
                     <div className="logo-area">
                         <Link className="navbar-brand text-muted" to="/">
-                            <img className="logo-image" src="./images/logo/ecommerce-web-logo.png" alt="logo-img" />
+                            <img className="logo-image" src={logo} alt="logo-img" />
                         </Link>
                     </div>
 
@@ -91,8 +91,9 @@ const Navbar = (props) => {
                                 <Link className="" to="/shop">Shop</Link>
                             </li>
                             <li className="" onClick={toggleNavbar}>
-                                <Link className="" to="/">Deals</Link>
+                                <Link className="" to="/about">About</Link>
                             </li>
+
                             <li className="" onClick={toggleNavbar}>
                                 <Link className="" to="/">Contact Us</Link>
                             </li>

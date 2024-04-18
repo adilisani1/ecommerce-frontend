@@ -1,0 +1,442 @@
+.about-container {
+    position: relative;
+    z-index: 10;
+
+    margin: 0 auto;
+}
+
+.about-wrapper {}
+
+
+.about-wrapper .about-top {
+    width: 100%;
+    padding: 210px 0px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+
+    background-image: url("/public/images/about-1.jpg");
+}
+
+.about-wrapper .about-top::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.about-top div {
+    position: relative;
+    z-index: 2;
+}
+
+.about-top div h1 {
+    color: white;
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: var(--Raleway);
+    margin-bottom: .7rem;
+}
+
+.about-top div span {
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 2.5rem;
+    font-family: var(--Poppins)
+}
+
+.about-top div p {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    line-height: 3.5rem;
+    font-family: var(--Poppins);
+    margin: 0 auto;
+    width: 60%;
+
+}
+
+
+.about-wrapper .our-mission {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 80px 20px;
+    gap: 100px;
+    max-width: 1500px;
+    align-items: center;
+
+}
+
+.our-mission div {
+    flex: 1;
+}
+
+.our-mission div h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: left;
+    justify-content: center;
+    font-family: var(--Poppins);
+    position: relative;
+    margin-bottom: 20px;
+
+}
+
+.our-mission div h1::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 45px;
+    height: 1.5px;
+
+    background-color: white;
+}
+
+.our-mission div span {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: left;
+    font-family: var(--Poppins);
+    position: relative;
+    transition: all .5s;
+    line-height: 4rem;
+
+}
+
+.our-mission div p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 2rem;
+    line-height: 3.5rem;
+    font-family: var(--Poppins);
+
+}
+
+.our-mission img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.our-team {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 100%;
+    margin: 40px auto;
+    max-width: 1500px;
+    padding: 20px;
+}
+
+.our-team div {
+    margin-bottom: 15px;
+
+}
+
+.our-team div h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: left;
+    justify-content: center;
+    font-family: var(--Poppins);
+    position: relative;
+
+}
+
+.our-team div h1::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 45px;
+    height: 1.5px;
+    background-color: white;
+}
+
+.our-team div span {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: left;
+    font-family: var(--Poppins);
+    position: relative;
+    transition: all .5s;
+
+
+}
+
+.our-team .items {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 8rem;
+
+
+}
+
+.our-team .items>div {
+    padding: 10px;
+    margin: 0;
+
+}
+
+
+
+.items .member-social {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.image-thumbnail img {
+    border-radius: 10px;
+    transition: 0.3s ease;
+    height: auto;
+    max-width: 100%;
+    border: none;
+    box-shadow: none;
+}
+
+
+
+.member-social a {
+    font-size: 1.9rem;
+    color: #777777;
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-info .name {
+    font-size: 2.1rem;
+    font-family: var(--Poppins);
+    font-weight: 700;
+}
+
+.team-info .name a {
+    color: #ffffff;
+}
+
+.team-info .member-role {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #8e8e8e;
+    font-family: var(--Poppins);
+    font-weight: 400;
+}
+
+@media screen and (max-width: 1280px) {
+    .about-wrapper .about-top {
+        padding: 160px 0px;
+
+    }
+
+    .about-top div h1 {
+
+        font-size: 4rem;
+
+    }
+
+    .about-top div span {
+        font-size: 1.6rem;
+
+    }
+
+    .about-top div p {
+        line-height: 3rem;
+        font-size: 1.5rem;
+        width: 70%;
+
+    }
+
+    .about-wrapper .our-mission {
+        padding: 25px;
+        gap: 50px;
+
+
+    }
+
+    .our-mission div h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .our-mission div span {
+        font-size: 3.7rem;
+
+    }
+
+    .our-mission div p {
+        line-height: 2.8rem;
+        font-size: 1.4rem;
+
+    }
+
+
+
+
+    .our-team div h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+
+    }
+
+
+
+    .our-team div span {
+        font-size: 3.7rem;
+
+
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .about-wrapper .our-mission {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .our-mission div h1 {
+        display: flex;
+    }
+
+    .our-mission div h1::before {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .our-mission div p {
+        text-align: center;
+        margin-top: .6rem;
+
+    }
+
+
+    .our-team div {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5px auto;
+    }
+
+    .our-team div h1::before {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .our-team .items {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .team-info .name {
+        font-size: 1.8rem;
+    }
+
+    .team-info .member-role {
+        font-size: 1.2rem;
+
+    }
+
+
+
+}
+
+@media screen and (max-width: 640px) {
+    .about-wrapper .about-top {
+        padding-top: 170px;
+        padding-bottom: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .about-top div h1 {
+        font-size: 3.5rem;
+
+    }
+
+    .about-top div span {
+
+        font-size: 1.3rem;
+
+
+    }
+
+    .about-top div p {
+        line-height: 3rem;
+        font-size: 1.3rem;
+        width: 100%;
+        display: none;
+
+    }
+
+    .our-mission div h1 {
+        font-size: 1.3rem;
+    }
+
+    .our-mission div h1::before {
+        bottom: -5.4px;
+        width: 30px;
+
+    }
+
+    .our-mission div span {
+
+        font-size: 2.5rem;
+    }
+
+    .our-mission div p {
+        line-height: 2.9rem;
+        font-size: 1.3rem;
+        width: 100%;
+
+
+    }
+
+    .our-team div h1 {
+        font-size: 1.3rem;
+
+    }
+
+
+
+    .our-team div span {
+        font-size: 2.5rem;
+
+
+    }
+
+}
